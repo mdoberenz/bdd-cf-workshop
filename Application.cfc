@@ -1,5 +1,5 @@
 component{
-	this.name = "Bdd";
+	this.name = now();
 
 	// any other application.cfc stuff goes below:
 	this.sessionManagement = false;
@@ -18,6 +18,7 @@ component{
 
 	// request start
 	public boolean function onRequestStart( String targetPage ){
+		request.tickets = {};
 		return true;
 	}
 }

@@ -7,14 +7,14 @@ component displayName="bdd.Person tests" extends="testbox.system.BaseSpec"{
 
 	function shouldCreateNewTicket() test {
 		person = new bdd.Person("Bob");
-		ticket = person.createTicket(123);
-		$assert.isEqual(ticket.getNumber(), 123);
+		ticket = person.createTicket(121);
+		$assert.isEqual(ticket.getNumber(), 121);
 	}
 
 	function shouldFailOnSuccessiveCreateTicket() test {
 		person = new bdd.Person("Bob");
-		ticket = person.createTicket(123);
-		$assert.throws( function(){ person.createTicket(123); }, 'ticketExists', 'Ticket 123 already exists' );
+		ticket = person.createTicket(122);
+		$assert.throws( function(){ person.createTicket(122); }, 'ticketExists', 'Ticket 122 already exists' );
 	}
 }
 
